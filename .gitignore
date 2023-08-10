@@ -34,3 +34,10 @@ override.tf.json
 terraform.rc
 
 *.lock.hcl
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/

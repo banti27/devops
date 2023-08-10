@@ -20,6 +20,10 @@ resource "aws_instance" "jenkins_server" {
 
     inline = [
 
+      #install git
+      "sudo yum install git -y",
+      "git -v",
+
       # install java
       "sudo yum upgrade -y",
       "sudo yum install java-17-amazon-corretto.x86_64 -y",
