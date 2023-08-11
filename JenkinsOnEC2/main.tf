@@ -29,6 +29,12 @@ resource "aws_instance" "jenkins_server" {
       "sudo yum install java-17-amazon-corretto.x86_64 -y",
       "java --version",
 
+      # install gradle only after installing java
+      "sudo wget -c https://services.gradle.org/distributions/gradle-8.2.1-bin.zip",
+      "sudo mkdir /opt/gradle",
+      "sudo unzip -d /opt/gradle gradle-8.2.1-bin.zip",
+      "export PATH=$PATH:/opt/gradle/gradle-8.2.1/bin",
+
       # install the npm
       "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash",
       ". ~/.nvm/nvm.sh",
